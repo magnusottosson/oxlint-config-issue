@@ -1,0 +1,39 @@
+{
+  "name": "oxlint-config-issue",
+  "version": "1.0.0",
+  "description": "Oxlint config",
+  "license": "UNLICENSED",
+  "author": "Magnus C Ottosson (external)",
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ],
+  "type": "module",
+  "main": "./dist/config.cjs",
+  "module": "./dist/config.js",
+  "types": "./dist/config.d.cts",
+  "exports": {
+    "require": {
+      "types": "./dist/config.d.cts",
+      "default": "./dist/config.cjs"
+    },
+    "import": {
+      "types": "./dist/config.d.ts",
+      "default": "./dist/config.js"
+    }
+  },
+  "scripts": {
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "build": "pkgroll --clean-dist",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "oxfmt": "0.43.0",
+    "oxlint": "1.58.0",
+    "pkgroll": "2.27.0",
+    "typescript": "5.9.3"
+  }
+}
